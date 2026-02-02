@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Conta passageiro</title>
+  <link rel="stylesheet" href="../TXOVA/conta_passageiro.css">
+</head>
+<body>
+  <header>
+      <span class ="menu-btn" onclick="openMenu()" >☰</span>
+  <h2>
+    Minha Conta
+  </h2>
+  <button class="dep">Depositar</button>
+  </header>
+   
+   <div class="cards">
+      <div class="card"> 
+         <h2>Saldo atual</h2>
+         <p>120,00 MZN</p>
+      </div>
+      <div class="card">
+         <h2>Pre&ccedil;o da corrida</h2>
+         <p>70,00 MZN</p>
+      </div>
+   </div>
+   <div class="btnw">
+   <button class="btn">Efectuar pagamento</button>
+   </div>
+   
+   <div id="menu" class="menu">
+    <nav>
+      <ul> 
+        <li><a href="javascript:void(0)" onclick ="closeMenu()">Fechar</a></li>
+         <li><a href="Txova html.html">In&iacute;cio</a></li>
+        <li><a href="prestadores.html">Prestadores</a></li>
+        <li><a href="historico.html">Hist&oacute;rico de corridas</a></li>
+        <li><a href="configuracao.html">Configura&ccedil;&otilde;es</a></li>
+        
+      </ul>
+    </nav>
+    </div>  
+  <div class="footer">
+    &copy; Desenvolvido por: Losesp Carlos Canipuela. <br>
+    Contactos: e-mail: losespcarlos@gmail.com; <br>
+    whatsapp: 848570501; <br>
+    facebook: Losesp Canipuela.
+  </div>
+   
+   
+   <script> 
+function openMenu(){
+  document.getElementById("menu").style.width = "250px";
+}
+function closeMenu(){
+  document.getElementById("menu").style.width = "0";
+}
+</script>
+</body>
+</html>

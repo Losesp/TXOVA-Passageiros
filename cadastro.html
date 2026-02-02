@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../TXOVA/cadastro.css">
+</head>
+<body>
+  <header>
+  <h1>Entrar</h1>
+  </header>
+
+  <fieldset class="campo">
+  <form id="formLogin" class="formulario">
+    <label>Telefone</label>
+      <input type="text" id="telefone" required />
+    <label>Senha</label>
+      <input type="password" id="senha" required />
+    <button type="submit">Entrar</button>
+    <a href="Registo.html">N&atilde;o tem conta? Cadastre-se</a>
+  </form>
+  </fieldset>
+
+  <footer>&copy; Desenvolvido por: Losesp Carlos Canipuela.<br>
+Contactos: e-mail: losespcarlos@gmail.com;<br>
+Whatsapp: 848570501<br>
+facebook: Losesp Canipuela</footer>
+
+  <script>
+     async function hashSHA256(text) {
+      const enc = new TextEncoder();
+      const data = enc.encode(text);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    function getUsuarios() {
+      const raw = localStorage.getItem('usuarios');
+      return raw ? JSON.parse(raw) : {};
+    }
+
+    const form = document.getElementById('formLogin');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const telefone = document.getElementById('telefone').value.trim();
+      const senha = document.getElementById('senha').value;
+      if (!telefone || !senha) { alert('Preencha todos os campos'); return; }
+
+      const usuarios = getUsuarios();
+      const user = usuarios[telefone];
+      if (!user) { alert('Usuário não encontrado. Cadastre-se primeiro.'); return; }
+
+      const hash = await hashSHA256(senha);
+      if (hash !== user.senhaHash) {
+        alert('Senha incorreta.');
+        return;
+      }
+
+      // login bem sucedido
+      localStorage.setItem('usuarioLogado', JSON.stringify({ telefone: user.telefone, nome: user.nome }));
+      window.location.href = 'TXOVA html.html';
+    });
+  </script>
+</body>
+</html>

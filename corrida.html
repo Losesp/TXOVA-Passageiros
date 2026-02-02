@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <title>Corrida</title>
+  <style>
+     
+  .footer{
+    position: fixed;
+    bottom: 0; 
+    width: 100%;
+    text-align: center;
+    background-color: #0D1333;
+    color: white;
+    padding: 10px;
+  }
+  body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #F9FAFB;
+  text-align: center;
+  color: #111827;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  width: 100%;
+  background-color: #0D1333;
+  padding: 15px;
+  color: white;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+  
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px; /* espaço para não sobrepor o header */
+}
+   .btn {
+      padding: 15px 25px;
+      margin: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn-iniciar {
+      background: #2563EB;
+      color: white;
+    }
+    .btn-iniciar:hover {
+      background: #1E40AF;
+    }
+    .btn-emergencia {
+      background: #DC2626;
+      color: white;
+    }
+    .btn-emergencia:hover {
+      background: #B91C1C;
+    }
+    .btn-terminar {
+      background: #16A34A;
+      color: white;
+    }
+    .btn-terminar:hover {
+      background: #15803D;
+    }
+    .mensagem {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      display: none;
+    }
+    .acoes {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+ 
+  </style>
+</head>
+<body>
+   <header>
+  <h2>
+    Corrida em andamento
+  </h2>
+   </header>
+      
+  <!-- Mensagem temporária -->
+  <main>
+  <div id="mensagem" class="mensagem"></div>
+
+  <!-- Botão inicial -->
+  <button id="btnIniciar" class="btn btn-iniciar">🚖 Iniciar corrida</button>
+
+  <!-- Área com os outros botões -->
+  <div id="acoes" class="acoes">
+    <button id="btnEmergencia" class="btn btn-emergencia">🚨 Emergência</button>
+    <button id="btnTerminar" class="btn btn-terminar">✅ Terminar corrida</button>
+  </div>
+</main>
+  
+   <div class="footer">
+    &copy; Desenvolvido por: Losesp Carlos Canipuela. <br>
+    Contactos: e-mail: losespcarlos@gmail.com; <br>
+    whatsapp: 848570501; <br>
+    facebook: Losesp Canipuela.
+  </div>
+  
+  <script> 
+   const btnIniciar = document.getElementById("btnIniciar");
+    const btnEmergencia = document.getElementById("btnEmergencia");
+    const btnTerminar = document.getElementById("btnTerminar");
+    const mensagem = document.getElementById("mensagem");
+    const acoes = document.getElementById("acoes");
+
+    // Iniciar corrida
+    btnIniciar.addEventListener("click", () => {
+      btnIniciar.style.display = "none";
+      mensagem.textContent = "🚖 Iniciando corrida...";
+      mensagem.style.display = "block";
+
+      setTimeout(() => {
+        mensagem.style.display = "none";
+        acoes.style.display = "flex";
+      }, 2000);
+    });
+
+    // Emergência
+    btnEmergencia.addEventListener("click", () => {
+      mensagem.textContent = "📞 Ligando para emergência e contactos de emergência...";
+      mensagem.style.display = "block";
+      setTimeout(() => {
+        mensagem.style.display = "none";
+      }, 3000);
+    });
+
+    // Terminar corrida
+    btnTerminar.addEventListener("click", () => {
+      mensagem.textContent = "💰 Pagamento efetuado ao transportador, obrigado pela preferência.";
+      mensagem.style.display = "block";
+      acoes.style.display = "none";
+
+      setTimeout(() => {
+        // 👉 Coloque aqui o endereço da página final
+        window.location.href = "TXOVA html.html";
+      }, 3000);
+    });
+  </script>
+</body>
+</html>  

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Configuração</title>
+  <link rel="stylesheet" href="../TXOVA/configuracao.css">
+</head>
+<body>
+  <header>
+     <span class ="menu-btn" onclick="openMenu()" >☰</span>
+  <h2>
+    Configura&ccedil;&otilde;es do Sistema
+  </h2>
+  </header>
+  
+   <div id="menu" class="menu">
+    <nav>
+      <ul> 
+        <li><a href="javascript:void(0)" onclick ="closeMenu()">Fechar</a></li>
+        <li><a href="TXOVA html.html">In&iacute;cio</a></li>
+        <li><a href="conta_passageiro.html">Minha conta</a></li>
+        <li><a href="prestadores.html">Prestadores</a></li>
+        <li><a href="historico.html">Hist&oacute;rico de corridas</a></li>
+        
+      </ul>
+    </nav>
+    </div>
+
+    <div class="conteudo">
+      <h2 class="first">Informa&ccedil;&otilde;es B&aacute;sicas</h2>
+    <table>
+      <tr>
+        <td colspan="3">Taxa fixa por transporte</td>
+        <td>Taxa fixa por quil&ocirc;metro</td>
+      </tr>
+      <tr>
+        <th>Moto-T&aacute;xi</th>
+        <th>T&aacute;xi-Carro</th>
+        <th>Transporte de carga</th>
+        <th>1km</th>
+      </tr>
+
+      <tr>
+        <td>20,00 MZN</td>
+        <td>40,00 MZN</td>
+        <td>60,00 MZN</td>
+        <td>10,00 MZN</td>
+      </tr>
+    </table>
+    </div>
+
+    <div class="card">
+      <b>C&aacute;lculo do pre&ccedil;o de cada corrida</b>
+      <p>Valor da corrida = Taxa fixa do transporte + (km * 10MZN)</p>
+    </div>
+    
+    <div class="pr">
+       <div class="search-bar">
+      <input type="text" placeholder=" Buscar" />
+    </div>
+    <div class="af">
+      <button class="btn1">
+        Baixar Aplicativo
+      </button>
+      <button class="btn2">
+        Enviar Solicita&ccedil;&atilde;o
+      </button>
+      </div>
+     
+      <div class="vertical">
+      <h2> Principais Perguntas</h2>
+      <button class="btn3">Como posso trocar minha senha?</button>
+      <button class="btn3">Como sei quanto me custar&aacute; uma corrida?</button>
+      <button class="btn3">Em caso de emerg&ecirc;ncia, e se o n&uacute;mero da pol&iacute;cia n&atilde;o chamar, como fico?</button>
+      <button class="btn3">E se eu chamar uma corrida e acabar que o motorista n&atilde;o apareceu, como fica o meu dinheiro?</button>
+     </div>
+      
+     <div class="vert">
+      <h3> Solicita&ccedil;&atilde;o de suporte com</h3>
+     <div class="cartoes">
+      <div class="cartao">
+       <p>Conta</p>
+      </div>
+      <div class="cartao">
+      <p>Pagamento</p>
+      </div>
+      <div class="cartao">
+       <p> corrida</p>
+      </div>
+      <div class="cartao">
+       <p>Falha no aplicativo</p> 
+      </div>
+     </div>
+     </div>
+
+     <div class="ult">
+     <h2>Precisa de mais ajuda?</h2>
+     <button class="ulti">Chat ao vivo</button>
+     </div>
+      
+    </div>
+  
+    <div class="footer">
+    &copy; Desenvolvido por: Losesp Carlos Canipuela. <br>
+    Contactos: e-mail: losespcarlos@gmail.com; <br>
+    whatsapp: 848570501; <br>
+    facebook: Losesp Canipuela.
+  </div>
+  
+  <script> 
+function openMenu(){
+  document.getElementById("menu").style.width = "250px";
+}
+function closeMenu(){
+  document.getElementById("menu").style.width = "0";
+}
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,113 @@
+
+*{
+ box-sizing: border-box;
+}
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding-top: 80px;
+      padding-bottom: 60px;
+    }
+
+fieldset{
+          background: #ffffff;
+          border-radius: 12px;
+          padding: 25px;
+          width: 300px;
+          box-shadow: 0px 4px 12px
+          rgba( 0, 0, 0, 0.1);
+          border: none;
+          display: flex;
+          text-align: center;
+          align-items: center;
+          justify-content: center;
+          margin:  0 auto;
+          margin-top: 40px;
+          margin-bottom: 80px;
+          
+       }
+
+    h2 {
+      text-align: center;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    input, select {
+      margin: 10px;
+    padding: 10px;
+    width: 250px;
+    border-radius: 15px;
+    background-color:#f5f5f5;
+    color: black;
+    border: none;
+    border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background-color: #2563eb;
+      font-weight: bold; 
+      cursor: pointer;
+      color: white;
+    }
+
+    button:hover {
+      background-color: #003399;
+    }
+
+ 
+
+    .mensagem {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+      color: green;
+    }
+
+  footer{
+    position: fixed;
+    bottom: 0; 
+    width: 100%;
+    text-align: center;
+    background-color: #6A1B9A; 
+    color: white;
+    padding: 10px;
+  }
+
+  header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #6A1B9A;
+    color: white;
+    z-index: 1000;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+  }
+
+    a{
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+   }
+
+  

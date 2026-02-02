@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Registo - TXOVA</title>
+  <link rel="stylesheet" href="../TXOVA/Registo.css">
+</head>
+<body>
+
+  <header>
+    <h2>Registe-se</h2>
+  </header>
+    <fieldset>
+
+    <form id="formRegister">
+      <label>Nome</label>
+      <input type="text" id="nome" placeholder="Digite seu nome" required>
+
+      <label>Contacto</label>
+      <input type="tel" id="telefone" placeholder="Que tenha whatsapp (melhor)" required>
+
+      <label>Senha</label>
+      <input type="password" id="senha" placeholder="Digite seu pin" required>
+
+      <label>E-mail</label>
+      <input type="email" id="email" placeholder="exemplo@gmail.com" required>
+
+      <label>Categoria</label>
+      <select id="categoria" required>
+        <option value="Passageiro">Passageiro</option>
+        <option value="Motorista">Motorista</option>
+      </select>
+      <button type="submit">Cadastrar</button>
+       <a href="cadastro.html">J&aacute; tem conta? Acesse</a>
+    </form>
+    </fieldset>
+
+    <div id="previewContainer" style="display:none;" class="preview">
+    <h3>Resumo dos dados</h3>
+    <div id="summary"></div>
+    <button id="confirmBtn">Confirmar e Continuar</button>
+    <button id="editBtn">Editar</button>
+  </div>
+
+  </div>
+  <footer>&copy; Desenvolvido por: Losesp Carlos Canipuela.<br>
+Contactos: e-mail: losespcarlos@gmail.com;<br>
+Whatsapp: 848570501<br>
+facebook: Losesp Canipuela</footer>
+
+  <script>
+    // ---- helper: hash SHA-256 e converte em hex ----
+    async function hashSHA256(text) {
+      const enc = new TextEncoder();
+      const data = enc.encode(text);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    // ---- acessa array de usuarios no localStorage ----
+    function getUsuarios() {
+      const raw = localStorage.getItem('usuarios');
+      return raw ? JSON.parse(raw) : {};
+    }
+    function setUsuarios(obj) {
+      localStorage.setItem('usuarios', JSON.stringify(obj));
+    }
+
+    const form = document.getElementById('formRegister');
+    const preview = document.getElementById('previewContainer');
+    const summary = document.getElementById('summary');
+    const confirmBtn = document.getElementById('confirmBtn');
+    const editBtn = document.getElementById('editBtn');
+
+    let pendingUser = null; // guarda temporariamente os dados antes de salvar
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value.trim();
+      const telefone = document.getElementById('telefone').value.trim();
+      const senha = document.getElementById('senha').value;
+
+      if (!nome || !telefone || !senha) {
+        alert('Preencha todos os campos.');
+        return;
+      }
+
+      // Verificar se telefone já existe
+      const usuarios = getUsuarios();
+      if (usuarios[telefone]) {
+        alert('Já existe uma conta com esse telefone. Use outro ou faça login.');
+        return;
+      }
+
+      // Criar hash da senha
+      const hash = await hashSHA256(senha);
+
+      // montar objeto do usuário (não guardamos a senha em texto claro)
+      pendingUser = { nome, telefone, senhaHash: hash, criadoEm: new Date().toISOString() };
+
+      // mostrar preview (SEM mostrar senha)
+      summary.innerHTML = `
+        <strong>Nome:</strong> ${escapeHtml(nome)}<br/>
+        <strong>Telefone:</strong> ${escapeHtml(telefone)}<br/>
+        <em>A senha não será mostrada por segurança.</em>
+      `;
+      preview.style.display = 'block';
+      form.style.display = 'none';
+    });
+
+    confirmBtn.addEventListener('click', () => {
+      if (!pendingUser) return;
+      const usuarios = getUsuarios();
+      usuarios[pendingUser.telefone] = pendingUser;
+      setUsuarios(usuarios);
+
+      // marca usuário como logado
+      localStorage.setItem('usuarioLogado', JSON.stringify({ telefone: pendingUser.telefone, nome: pendingUser.nome }));
+
+      // redireciona para a página seguinte
+      window.location.href = 'TXOVA html.html';
+    });
+
+    editBtn.addEventListener('click', () => {
+      preview.style.display = 'none';
+      form.style.display = 'block';
+      pendingUser = null;
+    });
+
+    // pequena função para evitar XSS ao mostrar texto
+    function escapeHtml(text) {
+      return text.replace(/[&<>"']/g, (m) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    }
+  </script>
+
+</body>
+</html>
