@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Prestadores</title>
-  <link rel="stylesheet" href="../TXOVA/prestadores.css">
+  <link rel="stylesheet" href="../TXOVA-Passageiros/prestadores.css">
 </head>
 <body>
   
@@ -26,6 +26,11 @@
       </ul>
     </nav>
     </div>
+
+    <section id="listaPrestadores" class="container-cards">
+        <!-- Os cards vão aparecer aqui via JS -->
+    </section>
+
  <div class="footer">
     &copy; Desenvolvido por: Losesp Carlos Canipuela. <br>
     Contactos: e-mail: losespcarlos@gmail.com; <br>
@@ -40,6 +45,40 @@ function openMenu(){
 function closeMenu(){
   document.getElementById("menu").style.width = "0";
 }
+
+
+let lista = document.getElementById("listaPrestadores");
+
+let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+let motoristas = usuarios.filter(u => u.categoria && 
+    u.categoria.toLowerCase() === 
+    "motorista"
+);
+
+motoristas.forEach(motorista => {
+
+ let card = document.createElement("div");
+ card.className = "card";
+
+ card.innerHTML = `
+   <h3>${motorista.nome}</h3>
+   <p>Distância: ${motorista.distancia}</p>
+   <p>Status: ${motorista.status}</p>
+   <button onclick="chamarPrestador('${motorista.contacto}')">
+   Chamar Prestador
+   </button>
+ `;
+
+ lista.appendChild(card);
+});
+
+function chamarPrestador(contacto){
+ localStorage.setItem("corridaAtiva", contacto);
+ window.location.href = "corrida.html";
+}
+
+
  </script>
 </body>
 </html>

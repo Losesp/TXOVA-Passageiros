@@ -3,7 +3,7 @@
     bottom: 0; 
     width: 100%;
     text-align: center;
-    background-color: #6A1B9A; 
+    background-color: #007BFF; 
     color: white;
     padding: 10px;
   }  
@@ -15,7 +15,7 @@
   header{
     display: flex;
     align-items: center;
-    background-color: #6A1B9A;
+    background-color: #007BFF;
     padding: 10px;
     color: white;
     gap: 45%;
@@ -34,7 +34,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #6A1B9A;
+    background-color: #007BFF;
     overflow-x: hidden;
     transition: 0.3s;
     padding-top: 60px;

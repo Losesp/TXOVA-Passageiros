@@ -12,7 +12,7 @@
     header{
       display: flex;
       justify-content: left;
-      background-color: #6A1B9A;
+      background-color: #007BFF;
       padding: 10px;
       color: white;
       flex-direction: row-reverse;
@@ -26,7 +26,7 @@
       bottom: 0; 
       width: 100%;
       text-align: center;
-      background-color: #6A1B9A;
+      background-color: #007BFF;
       color: white;
       padding: 10px;
     }
@@ -37,7 +37,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #6A1B9A;
+    background-color: #007BFF;
     overflow-x: hidden;
     transition: 0.3s;
     padding-top: 60px;
@@ -64,3 +64,54 @@
     display: flex;
     justify-content: center;
    }
+
+   /* Container dos cards */
+.container-cards{
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+/* Card */
+.card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+}
+
+/* Nome */
+.card h3{
+    color:#007BFF;
+    margin-bottom:10px;
+}
+
+/* Texto */
+.card p{
+    margin-bottom:5px;
+    font-size:14px;
+}
+
+/* Botão */
+.card button{
+    margin-top:10px;
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    background:#ffc107; /* amarelo */
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.card button:hover{
+    background:#ff9800; /* laranja */
+}

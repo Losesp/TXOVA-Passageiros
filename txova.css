@@ -5,7 +5,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #6A1B9A;
+    background-color: #007BFF;
     color:white;
     margin-bottom: 10px;
     }
@@ -25,7 +25,7 @@ footer{
     bottom: 0;
     width: 100%;
     text-align: center;
-    background-color: #6A1B9A;
+    background-color: #007BFF;
     color: white;
     margin-top: 20px;
 }
