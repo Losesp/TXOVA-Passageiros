@@ -60,6 +60,13 @@ let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 let motoristas = usuarios.filter(u => u.categoria && 
     u.categoria.toLowerCase() === 
     "motorista"
+      <section style="margin-top:18px">
+        <h3>Pesquisar / Filtrar</h3>
+        <div style="display:flex;gap:12px;align-items:center;margin-top:8px">
+          <input id="filtro" placeholder="Nome ou contacto" style="flex:1" />
+          <button id="btnFiltrar" class="btn secondary">Filtrar</button>
+        </div>
+      </section>
 );
 
 motoristas.forEach(motorista => {
@@ -71,20 +78,44 @@ motoristas.forEach(motorista => {
    <h3>${motorista.nome}</h3>
    <p>Distância: ${motorista.distancia}</p>
    <p>Status: ${motorista.status}</p>
-   <button onclick="chamarPrestador('${motorista.contacto}')">
-   Chamar Prestador
-   </button>
- `;
+   <script>
+     function openMenu(){ document.getElementById("menu").style.width = "250px"; }
+     function closeMenu(){ document.getElementById("menu").style.width = "0"; }
 
- lista.appendChild(card);
-});
+     function renderPrestadores(filter){
+       const container = document.getElementById('listaPrestadores');
+       container.innerHTML = '';
+       const usuarios = TXOVA.getUsuarios();
+       const motoristas = usuarios.filter(u => (u.categoria||'').toLowerCase() === 'motorista');
+       const list = motoristas.filter(m => {
+         if(!filter) return true;
+         const f = filter.toLowerCase();
+         return (m.nome||'').toLowerCase().includes(f) || (m.contacto||'').includes(f);
+       });
 
-function chamarPrestador(contacto){
- localStorage.setItem("corridaAtiva", contacto);
- window.location.href = "corrida.html";
-}
+       list.forEach(motorista => {
+         const card = document.createElement('div'); card.className='card';
+         card.innerHTML = `<h3>${motorista.nome}</h3>
+           <p>Contacto: ${motorista.contacto}</p>
+           <p>Status: ${motorista.status||'—'}</p>
+           <div class="actions"><button class="btn" onclick="chamarPrestador(${motorista.id})">Chamar</button></div>`;
+         container.appendChild(card);
+       });
+     }
 
+     function chamarPrestador(motoristaId){
+       const usuarios = TXOVA.getUsuarios();
+       const motorista = usuarios.find(u=>u.id===motoristaId);
+       if(!motorista){ alert('Prestador inválido'); return; }
+       // preenche corridaAtiva e redireciona
+       localStorage.setItem('corridaAtiva', JSON.stringify({ motoristaId: motoristaId }));
+       window.location.href = 'corrida.html';
+     }
 
- </script>
-</body>
-</html>
+     document.addEventListener('DOMContentLoaded', function(){
+       renderPrestadores();
+       document.getElementById('btnFiltrar').addEventListener('click', function(){
+         const v = document.getElementById('filtro').value||''; renderPrestadores(v);
+       });
+     });
+   </script>
