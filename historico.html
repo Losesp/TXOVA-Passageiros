@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Historico</title>
+  <link rel="stylesheet" href="../TXOVA-Passageiros/historico.css">
+</head>
+<body>
+   <header>
+   <span class ="menu-btn" onclick="openMenu()" >☰</span>
+  <h2>
+    Hist&oacute;rico de corridas
+  </h2>
+   </header>
+      
+   <div id="menu" class="menu">
+    <nav>
+      <ul> 
+        <li><a href="javascript:void(0)" onclick ="closeMenu()">Fechar</a></li>
+        <li><a href="TXOVA html.html">In&iacute;cio</a></li>
+        <li><a href="conta_passageiro.html">Minha conta</a></li>
+        <li><a href="prestadores.html">Prestadores</a></li>
+        <li><a href="configuracao.html">Configura&ccedil;&otilde;es</a></li>
+        
+      </ul>
+    </nav>
+    </div>
+    
+    <h3>Corridas efectuadas hoje</h3>
+    <div class="cards">
+        <div class="card">
+            
+            <strong>Hor&aacute;rio da chamada:</strong>10h34<br>
+            <strong>Valor desembol&ccedil;ado:</strong>70,00 MZN<br>
+            <strong>Dura&ccedil;ao do trajecto:</strong>46min<br>
+            <strong>Tipo de transporte usado:</strong>Moto-t&aacute;xi
+        </div>
+        <div class="card">
+            <strong>Hor&aacute;rio da chamada:</strong>15h58<br>
+            <strong>Valor do pagamento:</strong>240,00 MZN<br>
+            <strong>Dura&ccedil;ao do trajecto:</strong>1h23min<br>
+            <strong>Tipo de transporte usado:</strong> T&aacute;xi-carro
+        </div>
+    </div>
+        <h3>Corridas efectuadas ontem</h3>
+    <div class="cards">
+          <div class="card">
+            <strong>Hor&aacute;rio da chamada:</strong>21h16<br>
+            <strong>Valor do pagamento:</strong>480,00 MZN<br>
+            <strong>Dura&ccedil;ao do trajecto:</strong>2h05min<br>
+            <strong>Tipo de transporte usado:</strong> T&aacute;xi-carro
+            
+        </div>
+          <div class="card">
+            <strong>Hor&aacute;rio da chamada:</strong>15h58<br>
+            <strong>Valor do pagamento:</strong>900,00 MZN<br>
+            <strong>Dura&ccedil;ao do trajecto:</strong>3h30min<br>
+            <strong>Tipo de transporte usado:</strong>Transporte de carga
+        </div>
+    </div>
+  
+   <div class="footer">
+    &copy; Desenvolvido por: Losesp Carlos Canipuela. <br>
+    Contactos: e-mail: losespcarlos@gmail.com; <br>
+    whatsapp: 848570501; <br>
+    facebook: Losesp Canipuela.
+  </div>
+  
+  <script> 
+function openMenu(){
+  document.getElementById("menu").style.width = "250px";
+}
+function closeMenu(){
+  document.getElementById("menu").style.width = "0";
+}
+  </script>
+</body>
+</html>  
