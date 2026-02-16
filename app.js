@@ -26,6 +26,7 @@
     localStorage.setItem('usuarios', JSON.stringify(list));
   }
 
+  
   function getUsuarioLogado(){
     return JSON.parse(localStorage.getItem('usuarioLogado')||'null');
   }

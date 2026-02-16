@@ -21,16 +21,24 @@
     <nav>
       <ul> 
         <li><a href="javascript:void(0)" onclick ="closeMenu()"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M18.3 5.71a1 1 0 00-1.41 0L12 10.59 7.11 5.7A1 1 0 105.7 7.11L10.59 12l-4.9 4.89a1 1 0 101.41 1.41L12 13.41l4.89 4.9a1 1 0 001.41-1.41L13.41 12l4.9-4.89a1 1 0 000-1.4z"/></svg></span>Fechar</a></li>
-         <li><a href="Txova html.html"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span>In&iacute;cio</a></li>
+         <li><a href="TXOVA html.html"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span>Início</a></li>
         <li><a href="conta_passageiro.html"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-4.97 0-9 2.5-9 5.5V22h18v-2.5C21 16.5 16.97 14 12 14z"/></svg></span>Minha Conta</a></li>
-        <li><a href="historico.html"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M13 3a9 9 0 100 18 9 9 0 000-18zm1 10.59V7h-2v6l5 3 1-1.66-4-2.41z"/></svg></span>Hist&oacute;rico de corridas</a></li>
-        <li><a href="configuracao.html"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M19.14 12.94a7.94 7.94 0 000-1.88l2.03-1.57a0.5 0.5 0 00.12-0.65l-1.92-3.32a0.5 0.5 0 00-0.6-0.22l-2.39.96a7.97 7.97 0 00-1.6-.93L14.5 2.5a0.5 0.5 0 00-0.5-0.5h-4a0.5 0.5 0 00-0.5 0.5l-.38 2.6c-.57.23-1.11.54-1.6.93L4.64 5.1a0.5 0.5 0 00-0.6.22L2.12 8.64a0.5 0.5 0 00.12.65L4.27 10.9a7.94 7.94 0 000 1.88L2.24 14.35a0.5 0.5 0 00-0.12 0.65l1.92 3.32a0.5 0.5 0 00.6.22l2.39-.96c.49.39 1.03.7 1.6.93L10 21.5a0.5 0.5 0 00.5.5h4a0.5 0.5 0 00.5-0.5l.38-2.6c.57-.23 1.11-.54 1.6-.93l2.39.96a0.5 0.5 0 00.6-0.22l1.92-3.32a0.5 0.5 0 00-0.12-0.65l-2.12-1.47zM12 15.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/></svg></span>Configura&ccedil;&otilde;es</a></li>
+        <li><a href="historico.html"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M13 3a9 9 0 100 18 9 9 0 000-18zm1 10.59V7h-2v6l5 3 1-1.66-4-2.41z"/></svg></span>Histórico de corridas</a></li>
+        <li><a href="configuracao.html"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M19.14 12.94a7.94 7.94 0 000-1.88l2.03-1.57a0.5 0.5 0 00.12-0.65l-1.92-3.32a0.5 0.5 0 00-0.6-0.22l-2.39.96a7.97 7.97 0 00-1.6-.93L14.5 2.5a0.5 0.5 0 00-0.5-0.5h-4a0.5 0.5 0 00-0.5 0.5l-.38 2.6c-.57.23-1.11.54-1.6.93L4.64 5.1a0.5 0.5 0 00-0.6.22L2.12 8.64a0.5 0.5 0 00.12.65L4.27 10.9a7.94 7.94 0 000 1.88L2.24 14.35a0.5 0.5 0 00-0.12 0.65l1.92 3.32a0.5 0.5 0 00.6.22l2.39-.96c.49.39 1.03.7 1.6.93L10 21.5a0.5 0.5 0 00.5.5h4a0.5 0.5 0 00.5-0.5l.38-2.6c.57-.23 1.11-.54 1.6-.93l2.39.96a0.5 0.5 0 00.6-0.22l1.92-3.32a0.5 0.5 0 00-0.12-0.65l-2.12-1.47zM12 15.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/></svg></span>Configurações</a></li>
       </ul>
     </nav>
     </div>
 
     <section id="listaPrestadores" class="container-cards">
         <!-- Os cards vão aparecer aqui via JS -->
+    </section>
+
+    <section style="margin-top:18px">
+      <h3>Pesquisar / Filtrar</h3>
+      <div style="display:flex;gap:12px;align-items:center;margin-top:8px">
+        <input id="filtro" placeholder="Nome ou contacto" style="flex:1" />
+        <button id="btnFiltrar" class="btn secondary">Filtrar</button>
+      </div>
     </section>
 
   </main>
@@ -44,78 +52,45 @@
  
  <script src="app.js"></script>
 
- <script>       
-function openMenu(){
-  document.getElementById("menu").style.width = "250px";
-}
-function closeMenu(){
-  document.getElementById("menu").style.width = "0";
-}
+ <script>
+   function openMenu(){ document.getElementById("menu").style.width = "250px"; }
+   function closeMenu(){ document.getElementById("menu").style.width = "0"; }
 
-
-let lista = document.getElementById("listaPrestadores");
-
-let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-
-let motoristas = usuarios.filter(u => u.categoria && 
-    u.categoria.toLowerCase() === 
-    "motorista"
-      <section style="margin-top:18px">
-        <h3>Pesquisar / Filtrar</h3>
-        <div style="display:flex;gap:12px;align-items:center;margin-top:8px">
-          <input id="filtro" placeholder="Nome ou contacto" style="flex:1" />
-          <button id="btnFiltrar" class="btn secondary">Filtrar</button>
-        </div>
-      </section>
-);
-
-motoristas.forEach(motorista => {
-
- let card = document.createElement("div");
- card.className = "card";
-
- card.innerHTML = `
-   <h3>${motorista.nome}</h3>
-   <p>Distância: ${motorista.distancia}</p>
-   <p>Status: ${motorista.status}</p>
-   <script>
-     function openMenu(){ document.getElementById("menu").style.width = "250px"; }
-     function closeMenu(){ document.getElementById("menu").style.width = "0"; }
-
-     function renderPrestadores(filter){
-       const container = document.getElementById('listaPrestadores');
-       container.innerHTML = '';
-       const usuarios = TXOVA.getUsuarios();
-       const motoristas = usuarios.filter(u => (u.categoria||'').toLowerCase() === 'motorista');
-       const list = motoristas.filter(m => {
-         if(!filter) return true;
-         const f = filter.toLowerCase();
-         return (m.nome||'').toLowerCase().includes(f) || (m.contacto||'').includes(f);
-       });
-
-       list.forEach(motorista => {
-         const card = document.createElement('div'); card.className='card';
-         card.innerHTML = `<h3>${motorista.nome}</h3>
-           <p>Contacto: ${motorista.contacto}</p>
-           <p>Status: ${motorista.status||'—'}</p>
-           <div class="actions"><button class="btn" onclick="chamarPrestador(${motorista.id})">Chamar</button></div>`;
-         container.appendChild(card);
-       });
-     }
-
-     function chamarPrestador(motoristaId){
-       const usuarios = TXOVA.getUsuarios();
-       const motorista = usuarios.find(u=>u.id===motoristaId);
-       if(!motorista){ alert('Prestador inválido'); return; }
-       // preenche corridaAtiva e redireciona
-       localStorage.setItem('corridaAtiva', JSON.stringify({ motoristaId: motoristaId }));
-       window.location.href = 'corrida.html';
-     }
-
-     document.addEventListener('DOMContentLoaded', function(){
-       renderPrestadores();
-       document.getElementById('btnFiltrar').addEventListener('click', function(){
-         const v = document.getElementById('filtro').value||''; renderPrestadores(v);
-       });
+   function renderPrestadores(filter){
+     const container = document.getElementById('listaPrestadores');
+     container.innerHTML = '';
+     const usuarios = TXOVA.getUsuarios();
+     const motoristas = usuarios.filter(u => (u.categoria||'').toLowerCase() === 'motorista');
+     const list = motoristas.filter(m => {
+       if(!filter) return true;
+       const f = filter.toLowerCase();
+       return (m.nome||'').toLowerCase().includes(f) || (m.contacto||'').includes(f);
      });
-   </script>
+
+     list.forEach(motorista => {
+       const card = document.createElement('div'); card.className='card';
+       card.innerHTML = `<h3>${motorista.nome}</h3>
+         <p>Contacto: ${motorista.contacto}</p>
+         <p>Status: ${motorista.status||'—'}</p>
+         <div class="actions"><button class="btn" onclick="chamarPrestador(${motorista.id})">Chamar</button></div>`;
+       container.appendChild(card);
+     });
+   }
+
+   function chamarPrestador(motoristaId){
+     const usuarios = TXOVA.getUsuarios();
+     const motorista = usuarios.find(u=>u.id===motoristaId);
+     if(!motorista){ alert('Prestador inválido'); return; }
+     localStorage.setItem('corridaAtiva', JSON.stringify({ motoristaId: motoristaId }));
+     window.location.href = 'corrida.html';
+   }
+
+   document.addEventListener('DOMContentLoaded', function(){
+     renderPrestadores();
+     document.getElementById('btnFiltrar').addEventListener('click', function(){
+       const v = document.getElementById('filtro').value||''; renderPrestadores(v);
+     });
+   });
+ </script>
+</body>
+</html>
