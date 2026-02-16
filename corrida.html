@@ -2,91 +2,7 @@
 <html lang="pt">
 <head>
   <title>Corrida</title>
-  <style>
-     
-  .footer{
-    position: fixed;
-    bottom: 0; 
-    width: 100%;
-    text-align: center;
-    background-color: #007BFF;
-    color: white;
-    padding: 10px;
-  }
-  body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #F9FAFB;
-  text-align: center;
-  color: #111827;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-header {
-  width: 100%;
-  background-color: #007BFF;
-  padding: 15px;
-  color: white;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-  
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 60px; /* espaço para não sobrepor o header */
-}
-   .btn {
-      padding: 15px 25px;
-      margin: 15px;
-      font-size: 18px;
-      font-weight: bold;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .btn-iniciar {
-      background: #2563EB;
-      color: white;
-    }
-    .btn-iniciar:hover {
-      background: #1E40AF;
-    }
-    .btn-emergencia {
-      background: #DC2626;
-      color: white;
-    }
-    .btn-emergencia:hover {
-      background: #B91C1C;
-    }
-    .btn-terminar {
-      background: #16A34A;
-      color: white;
-    }
-    .btn-terminar:hover {
-      background: #15803D;
-    }
-    .mensagem {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      display: none;
-    }
-    .acoes {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-    }
- 
-  </style>
+  <link rel="stylesheet" href="mvp.css">
 </head>
 <body>
    <header>
@@ -116,6 +32,8 @@ main {
     facebook: Losesp Canipuela.
   </div>
   
+  <script src="app.js"></script>
+
   <script> 
    const btnIniciar = document.getElementById("btnIniciar");
     const btnEmergencia = document.getElementById("btnEmergencia");

@@ -4,28 +4,56 @@
   <meta charset="utf-8" />
   <title>Login</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="../TXOVA-Passageiros/cadastro.css">
+  <link rel="stylesheet" href="mvp.css">
 </head>
 <body>
   <header>
   <h1>Entrar</h1>
   </header>
 
-  <fieldset class="campo">
-  <form id="formLogin" class="formulario">
-    <label>Telefone</label>
-      <input type="text" id="contacto" required />
-    <label>Senha</label>
-      <input type="password" id="senha" required />
-    <button type="submit">Entrar</button>
-    <a href="Registo.html">N&atilde;o tem conta? Cadastre-se</a>
-  </form>
-  </fieldset>
+  <main class="container content">
+    <div class="auth-wrapper">
+      <div class="auth-card">
+        <div class="auth-side">
+          <h1>Bem-vindo de volta</h1>
+          <p>Acesse sua conta TXOVA para solicitar corridas, ver histórico e gerenciar pagamentos.</p>
+        </div>
+        <div class="auth-form">
+          <fieldset>
+          <form id="formLogin" class="formulario">
+            <div class="form-grid">
+              <div class="full input-group">
+                <label>Telefone</label>
+                <span class="input-icon" aria-hidden>
+                  <!-- phone icon -->
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+                </span>
+                <input type="text" id="contacto" required />
+              </div>
+              <div class="full input-group">
+                <label>Senha</label>
+                <span class="input-icon" aria-hidden>
+                  <!-- lock icon -->
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 8V7a5 5 0 00-10 0v1H5a1 1 0 00-1 1v10a1 1 0 001 1h14a1 1 0 001-1V9a1 1 0 00-1-1h-2zm-8-1a3 3 0 016 0v1H9V7z"/></svg>
+                </span>
+                <input type="password" id="senha" required />
+              </div>
+            </div>
+            <button type="submit">Entrar</button>
+            <p class="text-muted" style="margin-top:8px">Não tem conta? <a href="Registo.html">Cadastre-se</a></p>
+          </form>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </main>
 
   <footer>&copy; Desenvolvido por: Losesp Carlos Canipuela.<br>
 Contactos: e-mail: losespcarlos@gmail.com;<br>
 Whatsapp: 848570501<br>
 facebook: Losesp Canipuela</footer>
+
+  <script src="app.js"></script>
 
   <script>
      document.getElementById("formLogin").addEventListener("submit", function(e){

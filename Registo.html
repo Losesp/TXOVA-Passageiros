@@ -3,50 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <title>Registo - TXOVA</title>
-  <link rel="stylesheet" href="../TXOVA-Passageiros/Registo.css">
+  <link rel="stylesheet" href="mvp.css">
 </head>
 <body>
 
   <header>
     <h2>Registe-se</h2>
   </header>
-    <fieldset>
 
-    <form id="formCadastro">
-      <label>Nome</label>
-      <input type="text" id="nome" placeholder="Digite seu nome" required>
+  <main class="container content">
+    <div class="auth-wrapper">
+      <div class="auth-card">
+        <div class="auth-side">
+          <h1>Crie sua conta</h1>
+          <p>Registe-se como passageiro ou motorista e comece a usar o TXOVA agora mesmo.</p>
+        </div>
+        <div class="auth-form">
+          <fieldset>
+          <form id="formCadastro">
+            <div class="form-grid">
+              <div class="input-group">
+                <label>Nome</label>
+                <span class="input-icon" aria-hidden>
+                  <!-- user icon -->
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-4.4 0-8 2.2-8 4v2h16v-2c0-1.8-3.6-4-8-4z"/></svg>
+                </span>
+                <input type="text" id="nome" placeholder="Digite seu nome" required>
+              </div>
+              <div class="input-group">
+                <label>Contacto</label>
+                <span class="input-icon" aria-hidden>
+                  <!-- phone icon -->
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+                </span>
+                <input type="tel" id="contacto" placeholder="Que tenha whatsapp (melhor)" required>
+              </div>
+              <div class="full input-group">
+                <label>Senha</label>
+                <span class="input-icon" aria-hidden>
+                  <!-- lock icon -->
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 8V7a5 5 0 00-10 0v1H5a1 1 0 00-1 1v10a1 1 0 001 1h14a1 1 0 001-1V9a1 1 0 00-1-1h-2zm-8-1a3 3 0 016 0v1H9V7z"/></svg>
+                </span>
+                <input type="password" id="senha" placeholder="Digite seu pin" required>
+              </div>
+              <div class="full input-group">
+                <label>E-mail</label>
+                <span class="input-icon" aria-hidden>
+                  <!-- mail icon -->
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </span>
+                <input type="email" id="email" placeholder="exemplo@gmail.com" required>
+              </div>
+              <div class="full">
+                <label>Categoria</label>
+                <select id="categoria" required>
+                  <option value="passageiro">Passageiro</option>
+                  <option value="motorista">Motorista</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit">Cadastrar</button>
+            <p class="text-muted" style="margin-top:8px">Já tem conta? <a href="cadastro.html">Acesse</a></p>
+          </form>
+          </fieldset>
 
-      <label>Contacto</label>
-      <input type="tel" id="contacto" placeholder="Que tenha whatsapp (melhor)" required>
+          <div id="previewContainer" style="display:none;" class="preview">
+            <h3>Resumo dos dados</h3>
+            <div id="summary"></div>
+            <button id="confirmBtn">Confirmar e Continuar</button>
+            <button id="editBtn">Editar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
-      <label>Senha</label>
-      <input type="password" id="senha" placeholder="Digite seu pin" required>
-
-      <label>E-mail</label>
-      <input type="email" id="email" placeholder="exemplo@gmail.com" required>
-
-      <label>Categoria</label>
-      <select id="categoria" required>
-        <option value="passageiro">Passageiro</option>
-        <option value="motorista">Motorista</option>
-      </select>
-      <button type="submit">Cadastrar</button>
-       <a href="cadastro.html">J&aacute; tem conta? Acesse</a>
-    </form>
-    </fieldset>
-
-    <div id="previewContainer" style="display:none;" class="preview">
-    <h3>Resumo dos dados</h3>
-    <div id="summary"></div>
-    <button id="confirmBtn">Confirmar e Continuar</button>
-    <button id="editBtn">Editar</button>
-  </div>
-
-  </div>
   <footer>&copy; Desenvolvido por: Losesp Carlos Canipuela.<br>
 Contactos: e-mail: losespcarlos@gmail.com;<br>
 Whatsapp: 848570501<br>
 facebook: Losesp Canipuela</footer>
+
+  <script src="app.js"></script>
 
   <script>
  document.getElementById("formCadastro").addEventListener("submit", function(e){
